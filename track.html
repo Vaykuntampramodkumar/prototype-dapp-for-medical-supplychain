@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: url('download.jpeg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            font-size: 32px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4CAF50;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #009688;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medicine Tracker</h1>
+    <div class="container">
+        <label for="medicineId">Enter Medicine ID:</label>
+        <input type="number" id="medicineId" min="1" max="25">
+        <button onclick="trackMedicine()">Track</button>
+    </div>
+    <!-- Container for the Google Map -->
+    <div id="map"></div>
+
+    <!-- Include the Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzdNegyfe_p-_H-U4f0nHDpfwYfGvLJQk&callback=initMap" async defer></script>
+    
+    <script>
+        // Function to generate random latitude and longitude
+        function generateRandomLocation() {
+    // Generate random latitude and longitude within India's range
+    const minLat = 8.4;
+    const maxLat = 37.6;
+    const minLng = 68.7;
+    const maxLng = 97.25;
+    const latitude = Math.random() * (maxLat - minLat) + minLat;
+    const longitude = Math.random() * (maxLng - minLng) + minLng;
+    return { latitude, longitude };
+}
+
+        // Function to display map with medicine location
+        function displayMapWithMedicine(latitude, longitude) {
+            const mapOptions = {
+                center: { lat: latitude, lng: longitude }, // Center the map at the specified location
+                zoom: 10, // Zoom level
+            };
+            const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            // Add marker for the medicine
+            const marker = new google.maps.Marker({
+                position: { lat: latitude, lng: longitude },
+                map: map,
+                title: 'Medicine Location',
+            });
+        }
+
+        // Function to track the medicine based on entered ID
+        function trackMedicine() {
+            const medicineId = parseInt(document.getElementById('medicineId').value);
+            if (isNaN(medicineId) || medicineId < 1 || medicineId > 25) {
+                alert('Please enter a valid medicine ID .');
+                return;
+            }
+
+            // Generate a random location for demonstration
+            const location = generateRandomLocation();
+            displayMapWithMedicine(location.latitude, location.longitude);
+        }
+    </script>
+        <a href="index.html" style="text-decoration: none; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 4px;">Home</a>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    transition: color 0.5s, background-color 0.5s;
+    animation: changeBackground 4s infinite alternate; /* Animation for background color change */
+    position: relative; /* Add relative positioning to body */
+}
+
+
+/* Background image on header */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('rsz_gre.jpg'); /* Replace 'your-header-image.jpg' with the path to your header image */
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Animation keyframes for background color change */
+@keyframes changeBackground {
+    0% { background-color: #000000; } /* Black */
+    20% { background-color: #FFCCCC; } /* Light Red */
+    40% { background-color: #FFE5CC; } /* Light Orange */
+    60% { background-color: #FFFFCC; } /* Light Yellow */
+    80% { background-color: #CCFFCC; } /* Light Green */
+    100% { background-color: #CCCCFF; } /* Light Blue */
+}
+
+/* Rest of your CSS styles */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+        
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul li strong {
+            color: #4CAF50;
+        }
+        ul li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        .home {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .home:hover {
+            background-color: #45a049;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 2em;
+            color: #555;
+            cursor: default;
+        }
+        .logo span {
+            color: #4CAF50;
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+        }
+        .navigation a {
+            font-size: 1.1em;
+            color: #555;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+            transition: .3s;
+        }
+        .navigation a:hover {
+            color: #4CAF50;
+        }
+        .btn-talk {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #4CAF50;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: .3s;
+        }
+        .btn-talk:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo"><span>M</span>edical</h2>
+        <br>
+    
+
+        <a href="https://web.whatsapp.com/" class="btn-talk">Talk to Us</a>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <h1>Contact Information</h1>
+        <ul>
+            <li><strong>Name:</strong> Dr. Vaykuntam Pramod Kumar</li>
+            <li><strong>Email:</strong> <a href="mailto:vykuntam@gmail.com">vykuntam@gmail.com</a></li>
+            <li><strong>Instagram:</strong> <a href="https://www.instagram.com/vykuntam_pramodkumar/">@vykuntam_pramodkumar</a></li>
+            <li><strong>SupplierId:</strong> PramodSuppliers.in</li>
+            <li><strong>Phone:</strong> <a href="tel:+917780142033">+91-7780142033</a></li>
+            <li><strong>Address:</strong> Anthapur, 4th Road</li>
+        </ul>
+        <a href="index.html" class="home">Home</a>
+    </div>
+</body>
+</html>

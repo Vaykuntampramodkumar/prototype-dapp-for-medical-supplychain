@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pramod Medical Supply</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('med.webp'); /* Replace 'your_image_url_here' with the URL of your background image */
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background color */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 36px;
+        }
+
+        .hero {
+            background-image: linear-gradient(to bottom, #007bff, #0056b3); /* Gradient background */
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background color */
+        }
+
+        .nav-link:hover {
+            background-color: #0056b3;
+            border-color: #fff;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background color */
+            color: #fff;
+            padding: 20px 0;
+            font-size: 18px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer img {
+            width: 100px;
+            margin: 0 10px;
+        }
+
+        .red-button {
+            background-color: #ff3d3d; /* Red color */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .red-button:hover {
+            background-color: #ff0000; /* Darker red on hover */
+        }
+
+        #blink {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: sans-serif;
+            animation: blink 1s infinite; /* Blink animation */
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Pramod Medical Supply</h1>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to the Medical Ordering System</h2>
+            <p class="hero-text">Here are some options for you:</p>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="register.html" class="nav-link">Add Medicine</a></li>
+                    <li class="nav-item"><a href="regis1.html" class="nav-link">Company Order</a></li>
+                    <li class="nav-item"><a href="data.html" class="nav-link">Contact Us</a></li>
+                    <li class="nav-item"><a href="regis.3.html" class="nav-link">Customer order</a></li>
+                    <li class="nav-item"><a href="track.html" class="nav-link">track</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <marquee behavior="scroll" direction="left" scrollamount="5" style="padding: 20px; background-color: #f4f4f4; color: #333;">
+        Medicines can be added and orderd in web page. In case of any doubts, please feel free to contact us using (contact info).For customers the payment can be done directly via cash.
+    </marquee>
+    <p id="blink"> 
+        **Only for emergency** 
+    </p>  
+    <button class="red-button" onclick="redirectToAnotherPage()">Emergency</button>
+  
+    <!-- Script to redirect to another page -->
+    <script>
+        function redirectToAnotherPage() {
+            // Change the URL to the desired page
+            window.location.href = "https://www.springvalleyhospital.com/services/emergency-department/common-medical-emergencies";
+        }
+
+        var blink = document.getElementById('blink');
+
+        setInterval(function () {
+            blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+        }, 1000);
+    </script>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Pramod Medical Supply. All rights reserved.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUHQVcwNRaNu1YqVYsLYBeZMzvug0R66OUQ5WP2B5hwbQMHRDLQUQzQoFTkA&s" alt="Medical Icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlUi8SE3Vi0TLJ_MAsfUViiBUVOXt2ty-6WQ&s" alt="Medical Icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdIiEhTfPiLjRdVFM3xdpXRyHmusDvRBENYQ&s" alt="Medical Icon">
+        </div>
+    </footer>
+</body>
+</html>

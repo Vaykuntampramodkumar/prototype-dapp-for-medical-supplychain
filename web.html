@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Supply Chain DApp</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.5/dist/web3.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: url('data:image/jpeg;base64,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'); /* Specify the path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:red;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: black(255, 255, 255, 0.8);;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+
+        #medicinesList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #medicinesList li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #loadingCar {
+            display: none;
+            width: 200px;
+            left: -100px;
+            margin: 20px auto;
+            transition: left 5s linear;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medicine Supply Chain</h1>
+
+    <div>
+        <label for="medicineName">Medicine Name:</label>
+        <input type="text" id="medicineName">
+        <button onclick="addMedicine()">Add Medicine</button>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>Medicines List</h2>
+        <ul id="medicinesList"></ul>
+    </div>
+    <button onclick="redirectToOrderPage()">Order</button>
+    <a href="index.html" style="text-decoration: none; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 4px;">Home</a>
+    <a href="track.html" style="text-decoration: none; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 4px;">track</a>
+
+    <img src="https://media.tenor.com/kLMg16kgrYMAAAAj/pflegedienst-spengel.gif" alt="Loading..." id="loadingCar">
+
+    <script src="app.js"></script>
+</body>
+</html>

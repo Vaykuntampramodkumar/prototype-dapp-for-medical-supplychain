@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Medicine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: url('hty.webp'); /* Specify the path to your background image */
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: red;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 70%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #000;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .button-container a:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Medicine</h1>
+
+    <div class="container">
+        <form id="orderForm">
+            <label for="medicineId">Medicine ID:</label>
+            <input type="text" id="medicineId" name="medicineId" required>
+            <br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            <br>
+            <div class="button-container">
+                <button type="submit">Order</button>
+                <a href="track.html">Track</a>
+                <a href="index.html">Home</a>
+            </div>
+        </form>
+    </div>
+</form>
+
+<!-- Success message -->
+<div class="success-message" id="successMessage">
+    Order Placed Successfully!
+</div>
+</div>
+
+<script>
+// JavaScript to show success message after form submission
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+    // Show success message
+    document.getElementById("successMessage").style.display = "block";
+    // Hide success message after 3 seconds
+    setTimeout(function() {
+        document.getElementById("successMessage").style.display = "none";
+    }, 3000);
+    // Optional: You can submit the form data to a server using AJAX here
+});
+</script>
+</body>
+</html>
